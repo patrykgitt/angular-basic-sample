@@ -1,10 +1,15 @@
 import { Component, VERSION } from '@angular/core';
+import { Model } from './model';
 
 @Component({
-  selector: 'my-app',
+  selector: 'todo-app',
   templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ]
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent  {
-  name = 'Angular ' + VERSION.major;
+export class AppComponent {
+  model = new Model();
+  getName() {
+    return this.model.user;
+  }
+  //name = 'Angular ' + VERSION.major;
 }
